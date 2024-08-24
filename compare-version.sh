@@ -11,8 +11,7 @@ CURRENT_VERSION=$(grep '"version"' "./package.json" | sed -E 's/.*"version": "([
 
 if [[ "$(printf '%s\n' "$MASTER_VERSION" "$CURRENT_VERSION" | sort -V | head -n1)" < "$CURRENT_VERSION" ]]; then
     echo "${GREEN}$CHECKMARK package.json version is correct.${NO_COLLOR}"
-    exit 1
   else
     echo "${RED}$CROSS package.json version is incorrect. Expected higher than $MASTER_VERSION.${NO_COLLOR}"
-    exit 0
+    exit 1
 fi
