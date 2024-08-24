@@ -40,11 +40,22 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "stylelint": "^16.8.2",
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,html,md}": [
+      "prettier --write",
+      "eslint --max-warnings 0 ."
+    ],
+    "*.scss": [
+      "prettier --write",
+      "npx stylelint '**/*.scss'"
+    ]
   }
 }

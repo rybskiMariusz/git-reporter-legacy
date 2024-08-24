@@ -1,2 +1,2 @@
-npm run lint && npm run lint:style && sh compare-version.sh
+npx lint-staged && sh compare-version.sh
 
