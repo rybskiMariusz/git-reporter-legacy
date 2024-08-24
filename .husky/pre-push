@@ -1,0 +1,2 @@
+npx lint-staged && sh compare-version.sh
+
